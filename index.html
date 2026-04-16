@@ -84,7 +84,13 @@ body {
   object-fit: cover;
   z-index: 0;
   opacity: 0.35;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
+
+.video-bg::-webkit-media-controls { display: none !important; }
+.video-bg::-webkit-media-controls-enclosure { display: none !important; }
 
 .video-overlay {
   position: absolute;
