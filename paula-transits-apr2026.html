@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paula's Transit Reading - April 20-30, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a1a;
+    color: #e8e0d8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Starfield background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,0.2), transparent),
+      radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(2px 2px at 5% 50%, rgba(200,180,255,0.4), transparent),
+      radial-gradient(2px 2px at 55% 30%, rgba(200,180,255,0.3), transparent),
+      radial-gradient(2px 2px at 85% 65%, rgba(255,200,180,0.3), transparent),
+      radial-gradient(1px 1px at 35% 35%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 95% 25%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 40% 70%, rgba(200,180,255,0.2), transparent),
+      radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.4), transparent);
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, rgba(120,80,160,0.15), rgba(80,60,140,0.1), rgba(160,100,140,0.08));
+    border: 1px solid rgba(180,140,200,0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; right: -50%; bottom: -50%;
+    background: radial-gradient(ellipse at center, rgba(140,100,180,0.08) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .header-symbol {
+    font-size: 48px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.4em;
+    letter-spacing: 0.04em;
+    color: #e8d8f0;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.15em;
+    color: rgba(200,180,220,0.7);
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header .date-range {
+    font-size: 0.85em;
+    color: rgba(200,180,220,0.5);
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Natal snapshot */
+  .natal-snapshot {
+    background: rgba(40,30,60,0.4);
+    border: 1px solid rgba(140,100,180,0.12);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .natal-snapshot h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: rgba(200,180,220,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+
+  .natal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .natal-item {
+    font-size: 0.82em;
+    color: rgba(200,180,220,0.55);
+  }
+
+  .natal-item strong {
+    color: rgba(220,200,240,0.8);
+    font-weight: 400;
+  }
+
+  /* Section styling */
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(140,100,180,0.12);
+  }
+
+  .section-icon {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #d8c8e8;
+    letter-spacing: 0.03em;
+  }
+
+  /* Transit cards */
+  .transit-card {
+    background: linear-gradient(135deg, rgba(40,30,60,0.5), rgba(30,25,50,0.4));
+    border: 1px solid rgba(140,100,180,0.1);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+  }
+
+  .transit-card:hover {
+    border-color: rgba(180,140,220,0.25);
+  }
+
+  .transit-card.highlight {
+    border-left: 3px solid rgba(200,160,255,0.5);
+    background: linear-gradient(135deg, rgba(60,40,80,0.4), rgba(40,30,60,0.3));
+  }
+
+  .transit-card.major {
+    border-left: 3px solid rgba(255,180,140,0.5);
+    background: linear-gradient(135deg, rgba(60,35,50,0.4), rgba(40,25,40,0.3));
+  }
+
+  .transit-date {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(200,160,255,0.5);
+    margin-bottom: 6px;
+  }
+
+  .transit-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.25em;
+    color: #e0d0f0;
+    margin-bottom: 4px;
+  }
+
+  .transit-aspect {
+    font-size: 0.78em;
+    color: rgba(180,160,200,0.5);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .transit-body {
+    font-size: 0.92em;
+    line-height: 1.75;
+    color: rgba(220,210,230,0.85);
+  }
+
+  .transit-body p {
+    margin-bottom: 10px;
+  }
+
+  .transit-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Theme summary */
+  .theme-card {
+    background: linear-gradient(135deg, rgba(80,50,100,0.25), rgba(50,35,70,0.2));
+    border: 1px solid rgba(160,120,200,0.15);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+
+  .theme-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #d8c0e8;
+    margin-bottom: 8px;
+  }
+
+  .theme-card p {
+    font-size: 0.9em;
+    color: rgba(210,200,225,0.8);
+  }
+
+  /* Day-by-day */
+  .day-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(140,100,180,0.06);
+    font-size: 0.88em;
+  }
+
+  .day-row:last-child { border-bottom: none; }
+
+  .day-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: rgba(200,170,230,0.7);
+    text-align: right;
+    padding-top: 2px;
+  }
+
+  .day-content {
+    color: rgba(210,200,225,0.75);
+    line-height: 1.6;
+  }
+
+  .day-content .hot {
+    color: rgba(255,180,160,0.9);
+    font-weight: 400;
+  }
+
+  .day-content .gentle {
+    color: rgba(180,200,255,0.8);
+  }
+
+  /* Aurora CTA */
+  .aurora-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(60,30,80,0.3), rgba(20,40,80,0.2), rgba(60,30,80,0.15));
+    border: 1px solid rgba(140,100,200,0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .aurora-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; right: -100%; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(100,200,255,0.03), rgba(100,255,200,0.02), transparent);
+    animation: shimmer 6s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+  }
+
+  .aurora-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    color: #c8e8d8;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-cta p {
+    font-size: 0.9em;
+    color: rgba(200,220,210,0.7);
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, rgba(100,180,200,0.25), rgba(140,100,200,0.2));
+    border: 1px solid rgba(140,180,220,0.3);
+    border-radius: 50px;
+    color: #c8dce8;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05em;
+    letter-spacing: 0.06em;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-btn:hover {
+    background: linear-gradient(135deg, rgba(100,180,200,0.35), rgba(140,100,200,0.3));
+    border-color: rgba(160,200,240,0.5);
+    transform: translateY(-1px);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(140,100,180,0.08);
+    font-size: 0.78em;
+    color: rgba(160,140,180,0.4);
+  }
+
+  .footer a {
+    color: rgba(200,170,230,0.5);
+    text-decoration: none;
+  }
+
+  /* Intensity badge */
+  .intensity {
+    display: inline-block;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .intensity.high {
+    background: rgba(255,140,120,0.15);
+    color: rgba(255,180,160,0.8);
+    border: 1px solid rgba(255,140,120,0.2);
+  }
+
+  .intensity.medium {
+    background: rgba(200,160,255,0.1);
+    color: rgba(200,170,240,0.7);
+    border: 1px solid rgba(200,160,255,0.15);
+  }
+
+  .intensity.gentle {
+    background: rgba(140,200,255,0.1);
+    color: rgba(160,200,255,0.7);
+    border: 1px solid rgba(140,200,255,0.15);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 40px 18px 60px; }
+    .header h1 { font-size: 1.8em; }
+    .natal-grid { grid-template-columns: repeat(2, 1fr); }
+    .day-row { grid-template-columns: 65px 1fr; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="header-symbol">&#9801;</div>
+    <h1>Paula's Cosmic Weather</h1>
+    <div class="subtitle">A transit reading for the rest of April</div>
+    <div class="date-range">April 20 - 30, 2026</div>
+  </div>
+
+  <!-- Natal Snapshot -->
+  <div class="natal-snapshot">
+    <h3>Your Chart at a Glance</h3>
+    <div class="natal-grid">
+      <div class="natal-item"><strong>Sun</strong><br>12&#176; Taurus</div>
+      <div class="natal-item"><strong>Moon</strong><br>12&#176; Scorpio</div>
+      <div class="natal-item"><strong>Rising</strong><br>Gemini</div>
+      <div class="natal-item"><strong>Mercury</strong><br>24&#176; Aries</div>
+      <div class="natal-item"><strong>Venus</strong><br>18&#176; Taurus</div>
+      <div class="natal-item"><strong>Mars</strong><br>26&#176; Aquarius</div>
+      <div class="natal-item"><strong>Jupiter</strong><br>10&#176; Aquarius</div>
+      <div class="natal-item"><strong>Saturn</strong><br>18&#176; Gemini</div>
+      <div class="natal-item"><strong>Uranus</strong><br>20&#176; Libra Rx</div>
+      <div class="natal-item"><strong>Neptune</strong><br>6&#176; Sagittarius Rx</div>
+      <div class="natal-item"><strong>Pluto</strong><br>2&#176; Libra Rx</div>
+      <div class="natal-item"><strong>North Node</strong><br>10&#176; Capricorn</div>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#10024;</div>
+      <h2>The Big Picture</h2>
+    </div>
+
+    <div class="theme-card">
+      <h4>Uranus crosses your Rising sign - you are being reborn</h4>
+      <p>On April 25-26, Uranus leaves Taurus and enters Gemini - your Rising sign. This is generational-level energy landing directly on your identity. The last time Uranus was in Gemini was 1941-1949. This transit will reshape how you present yourself to the world, how people perceive you, and quite literally who you are becoming. For a migration lawyer who has just decided to build, systematise, and position her practice for a major exit - this is the cosmos handing you the energy to reinvent from the inside out. You are not the same practitioner you were six months ago. Uranus does not do predictable - but it does do powerful.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>Jupiter in your 2nd house - abundance is being seeded</h4>
+      <p>Jupiter in Cancer is sitting in your 2nd house of money, resources, and self-worth. It is making an exact sextile to your natal Venus in Taurus - the luckiest aspect for financial flow. This is not abstract prosperity talk. This is Jupiter saying: what you are building right now - the systems, the automation, the infrastructure that turns Visa Advice from a one-woman operation into a sellable asset - it carries real, tangible value. Jupiter in Cancer expands through nurturing and care. Every client portal, every streamlined process, every piece of documentation you build increases what this business is worth. Jupiter is blessing the build.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>Your core tension is being activated</h4>
+      <p>Your Sun at 12 degrees Taurus opposes your Moon at 12 degrees Scorpio with only 0.4 degrees of separation. This is the engine of your entire chart - the pull between security and transformation, between holding on and letting go, between the known and the depths. Right now, the transiting Sun is moving through Taurus, approaching your natal Sun. It is lighting up this opposition. The question your chart keeps asking you: can you feel safe AND transform at the same time? The answer, for you, is yes - but only when you stop trying to have one without the other.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>Neptune opposite your Pluto - the deep dissolve</h4>
+      <p>Transit Neptune at 2-3 degrees Aries is sitting in exact opposition to your natal Pluto at 2 degrees Libra. This is a slow, powerful, once-in-a-lifetime transit. It dissolves old power structures, old control patterns, old ways you have held yourself together. For someone whose nervous system is already activated, this can feel like the ground is not solid. It is not punishment. It is your psyche composting what no longer serves you. The fear you are feeling is not a warning - it is old armour falling away.</p>
+    </div>
+  </div>
+
+  <!-- Major Transits -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#9733;</div>
+      <h2>The Transits That Matter</h2>
+    </div>
+
+    <div class="transit-card major">
+      <div class="transit-date">April 25-26 - reverberates for years</div>
+      <div class="transit-title">Uranus enters Gemini (your Rising sign) <span class="intensity high">High Intensity</span></div>
+      <div class="transit-aspect">Transit Uranus 29&#176;58' Taurus &#8594; 0&#176;01' Gemini - crossing your Ascendant sign</div>
+      <div class="transit-body">
+        <p>This is the headline of your entire year, not just this week. Uranus entering your Rising sign is one of the most significant transits a person can experience. It happens roughly once every 84 years.</p>
+        <p>For you, Gemini Rising means the world has always seen you as articulate, adaptable, intellectually sharp - the lawyer. Uranus entering this sign is going to electrify that identity. You are shifting from solo practitioner to strategic builder. From doing the work to building the machine that does the work. That is a fundamentally different identity - and Uranus is the planet that makes that kind of reinvention not just possible but inevitable.</p>
+        <p>The decision to build Visa Advice into something that runs without you, something worth a serious exit - that is Uranus rewriting your 1st house. You are not just improving a business. You are becoming the person who can build, systematise, and release it. The nervousness you feel is your body registering the magnitude of what you have decided. It is not a sign to stop. It is a sign the change is real.</p>
+        <p>Uranus also begins forming a trine to your natal Pluto in Libra - deep, empowering transformation that flows rather than forces. The universe is not pushing you off a cliff. It is handing you the blueprint for an exit that funds your entire next chapter.</p>
+      </div>
+    </div>
+
+    <div class="transit-card major">
+      <div class="transit-date">Exact April 25-26 - active all period</div>
+      <div class="transit-title">Jupiter sextile Venus <span class="intensity high">Abundance</span></div>
+      <div class="transit-aspect">Transit Jupiter 18&#176;10' Cancer &#9913; Natal Venus 18&#176;18' Taurus - exact to 0.13&#176;</div>
+      <div class="transit-body">
+        <p>This is the most beautiful transit in your chart right now. Jupiter - the planet of expansion, luck, and abundance - is making a near-perfect sextile to your natal Venus in Taurus. Venus in Taurus is about tangible value, sensory pleasure, financial security, and work that feels deeply nourishing.</p>
+        <p>In your 2nd house of money, Jupiter is saying: what you build when you follow your values will generate real wealth. This is not someday energy. This is now. The sextile is an opportunity aspect - it opens the door, but you have to walk through it.</p>
+        <p>For your portfolio projects, this transit is golden. Cru & Co, Prima Pearl, Dirty Martini, Coffee Book, Partner Visa Kit - Jupiter sextile Venus blesses ventures that combine beauty, care, and genuine value. The ones that feel most alive to you are the ones most likely to succeed right now.</p>
+      </div>
+    </div>
+
+    <div class="transit-card highlight">
+      <div class="transit-date">Active all period - tightening</div>
+      <div class="transit-title">Neptune opposite Pluto <span class="intensity medium">Deep Process</span></div>
+      <div class="transit-aspect">Transit Neptune 2&#176;54' Aries &#9741; Natal Pluto 2&#176;05' Libra - orb 0.83&#176;</div>
+      <div class="transit-body">
+        <p>This slow-moving transit has been building and will continue for some time. Neptune dissolving Pluto's grip is like a deep ocean current reshaping the seabed - you might not see it happening, but you feel it in your bones.</p>
+        <p>Your natal Pluto in Libra holds your deepest patterns around relationships, fairness, justice, and power in partnerships. Neptune is softening these structures. The old way of running this business - doing everything yourself, holding every detail, being the only person who knows how it works - that identity is dissolving.</p>
+        <p>This is part of why the decision to build and sell feels so right AND so scary at the same time. You are not just changing how the business runs. You are releasing who you had to be to keep it running alone. Let that version go. What replaces it - the version of you who builds systems, delegates, and creates something bigger than herself - that is who is arriving.</p>
+      </div>
+    </div>
+
+    <div class="transit-card highlight">
+      <div class="transit-date">April 23 - exact square</div>
+      <div class="transit-title">Mars square North Node <span class="intensity medium">Directional Pressure</span></div>
+      <div class="transit-aspect">Transit Mars 10&#176;36' Aries &#9633; Natal North Node 10&#176;47' Capricorn - exact to 0.19&#176;</div>
+      <div class="transit-body">
+        <p>Mars square your North Node is a fire-starter for your life direction. Your North Node in Capricorn is about building something that lasts - authority, credibility, structure. Mars in Aries is raw impulse and courage.</p>
+        <p>The square creates friction between wanting to leap NOW and the Capricorn need to do it properly, with structure and substance. For someone building a practice into a sellable asset, this tension is incredibly productive. The impatience you feel is Mars saying: move. The North Node is saying: build it right so it holds.</p>
+        <p>Both are correct. Move forward, but move with structure. Every system you put in place, every process you document, every automation you build - that is the Capricorn path. And Mars is giving you the fire to walk it.</p>
+      </div>
+    </div>
+
+    <div class="transit-card highlight">
+      <div class="transit-date">April 27-28</div>
+      <div class="transit-title">Mercury opposite Uranus + Sun conjunct Ascendant <span class="intensity medium">Identity Activation</span></div>
+      <div class="transit-aspect">Transit Mercury 19&#176;37' Aries &#9741; Natal Uranus 20&#176;07' Libra | Transit Sun 8&#176;12' Taurus &#9737; Natal ASC</div>
+      <div class="transit-body">
+        <p>Mercury opposing your natal Uranus brings sudden insights, unexpected conversations, and ideas that arrive fully formed. Your natal Uranus in Libra holds your capacity for revolutionary thinking about fairness and systems. This is exactly the energy for seeing your business from a completely new angle - the buyer's perspective, the systems architect's perspective.</p>
+        <p>Meanwhile, the Sun crosses your Ascendant in late April, illuminating who you are becoming. People will notice you differently this week. Your presence carries more weight. This is the universe putting a spotlight on the builder you are becoming.</p>
+        <p>If a bold idea arrives about how to structure the business, a partnership opportunity, or a way to increase its value - pay attention. Mercury-Uranus downloads are the kind that change trajectories.</p>
+      </div>
+    </div>
+
+    <div class="transit-card">
+      <div class="transit-date">April 29</div>
+      <div class="transit-title">Mercury conjunct natal Mercury <span class="intensity gentle">Mercury Return</span></div>
+      <div class="transit-aspect">Transit Mercury 23&#176;12' Aries &#9737; Natal Mercury 24&#176;07' Aries - orb 0.92&#176;</div>
+      <div class="transit-body">
+        <p>Your Mercury Return - the moment transit Mercury returns to its natal position in your chart. This happens once a year and sharpens your thinking, clarifies your communication, and brings mental clarity.</p>
+        <p>With your Mercury in Aries, this return brings decisive, bold thinking. You know what you want to say and you say it without hesitation. Excellent energy for making declarations, signing documents, or having the conversation you have been putting off. Your mind is at its sharpest today.</p>
+      </div>
+    </div>
+
+    <div class="transit-card">
+      <div class="transit-date">April 29-30</div>
+      <div class="transit-title">Mars sextile MC + Venus opposite Neptune <span class="intensity gentle">Vision meets Action</span></div>
+      <div class="transit-aspect">Transit Mars 15&#176; Aries &#9913; Natal MC 15&#176; Aquarius | Transit Venus 6&#176;28' Gemini &#9741; Natal Neptune 6&#176;42' Sagittarius</div>
+      <div class="transit-body">
+        <p>Mars sextile your Midheaven is a direct injection of energy into your career and public reputation. In Aries, Mars is at home - this is courageous, pioneering energy aimed directly at your professional future. Your MC in Aquarius marks you for work that is innovative, systematic, and ahead of its time. Building Visa Advice with AI-powered operations, automated onboarding, and intelligent client management - these are Aquarian endeavours through and through.</p>
+        <p>Venus opposite Neptune at the same time adds a dreamy, idealised quality. Be careful not to over-romanticise opportunities, but also let yourself imagine big. The dream and the drive are both present. Use them together.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day by Day -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#128197;</div>
+      <h2>Day by Day</h2>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 20<br><small>Mon</small></div>
+      <div class="day-content">
+        <span class="gentle">Jupiter sextile Venus tightening</span> - abundance energy building in your money house. Venus square natal Mars - tension between comfort and action. Mercury and Mars both trine natal Neptune - intuition is sharp, trust your gut instincts today. Neptune opposite Pluto exact to 0.83 degrees - the deep dissolve continues beneath the surface. Good day to journal about what you are releasing.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 21<br><small>Tue</small></div>
+      <div class="day-content">
+        Venus square Mars exact - you may feel pulled between what feels safe and what feels exciting. Mercury sextile natal Jupiter - expansive thinking, good for brainstorming your portfolio projects. <span class="gentle">Moon in late Gemini trines your natal Mars</span> - emotional energy flows easily into productive action. Saturn trine natal Neptune supports building structure around your dreams.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 22<br><small>Wed</small></div>
+      <div class="day-content">
+        <span class="gentle">Moon enters Cancer - your 2nd house lights up.</span> Moon sextile your Sun and Moon axis - emotional warmth and self-nurturing. Mercury square natal North Node - mental tension about your direction. Mars sextile natal Jupiter - courage meets opportunity. Good day for financial planning or pricing your services.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 23<br><small>Thu</small></div>
+      <div class="day-content">
+        <span class="hot">Mars square North Node - exact to 0.19 degrees.</span> This is a pivot point. The friction between impulse and direction crystallises. Moon in late Cancer squares natal Mercury - emotional thinking, potential overwhelm. Jupiter sextile Venus tightening to 0.38 degrees - abundance is close, keep building. Saturn trine Neptune supports grounded spiritual growth.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 24<br><small>Thu</small></div>
+      <div class="day-content">
+        <span class="gentle">Jupiter sextile Venus exact to 0.25 degrees - near-peak abundance energy.</span> Venus enters Gemini and immediately trines natal Pluto - deep attraction, magnetic power in how you present yourself. Mercury sextile natal MC - your words carry professional weight. Moon in Leo squares your Ascendant - you want to be seen but might feel self-conscious. Own it. You have earned this visibility.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 25<br><small>Fri</small></div>
+      <div class="day-content">
+        <span class="hot">PEAK DAY: Jupiter sextile Venus EXACT (0.13 degrees) + Uranus at 29&#176;58' Taurus - on the threshold of Gemini.</span> Your money house is activated at maximum. Uranus is hours away from crossing into your Rising sign. Mercury sextile natal MC supports career communication. Venus trine natal Pluto exact to 0.47 degrees - powerful, transformative beauty. The nervous energy is real. Channel it into something concrete - a pitch, a plan, a decision.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 26<br><small>Sat</small></div>
+      <div class="day-content">
+        <span class="hot">Uranus enters Gemini (0&#176;01') - your Rising sign is activated.</span> A generational shift lands directly on your identity. Jupiter sextile Venus still exact. Mercury sextile natal Saturn - structured thinking, good for legal analysis. Moon in early Virgo squares natal Neptune - avoid overthinking the details. The big picture matters more than perfection today. Breathe. This is not an ending. It is a beginning you have been preparing for.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 27<br><small>Sun</small></div>
+      <div class="day-content">
+        <span class="hot">Mercury opposite natal Uranus - sudden insight, breakthrough thinking.</span> Mercury also sextile natal Saturn - the insight comes with structure. Sun approaching your Ascendant - your presence strengthens. Moon in Virgo trine natal Venus - sensory comfort, treat yourself. <span class="gentle">Jupiter square natal Uranus activating</span> - growth through disruption. The new ideas arriving today are worth capturing.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 28<br><small>Mon</small></div>
+      <div class="day-content">
+        <span class="gentle">Sun conjunct Ascendant - exact to 0.70 degrees. Your identity is illuminated.</span> Moon at 1 degree Libra conjuncts natal Pluto - deep emotional processing, old patterns surface for release. Jupiter sextile Venus holding. Mars sextile natal MC - career energy, take action on professional goals. Uranus trine natal Pluto begins - empowering transformation that flows.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 29<br><small>Tue</small></div>
+      <div class="day-content">
+        <span class="hot">Mercury Return - your mind is razor sharp.</span> Sun conjunct Ascendant exact to 0.27 degrees - peak visibility. Mars sextile MC exact to 0.40 degrees - career action supported. Venus opposite natal Neptune exact to 0.24 degrees - reality vs dreams in relationships or finances. Moon conjunct natal Uranus in Libra brings emotional surprises. Make the bold move today. Your chart is backing you.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 30<br><small>Wed</small></div>
+      <div class="day-content">
+        Mercury conjunct natal Mercury still active, now also sextile natal Mars - sharp words, strategic communication. <span class="gentle">Sun trine North Node (0.64 degrees) - your daily actions align with your soul direction.</span> Mars sextile MC exact to 0.37 degrees - the month ends with career fire. Jupiter square natal Uranus - growth through change. Moon in late Libra trine natal Mars - emotional energy flows into productive action. A powerful close to a transformative ten days.
+      </div>
+    </div>
+  </div>
+
+  <!-- Self-Care -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#127807;</div>
+      <h2>Self-Care This Week</h2>
+    </div>
+
+    <div class="theme-card">
+      <h4>For your nervous system</h4>
+      <p>With Uranus entering your Rising sign, Neptune dissolving old Pluto patterns, and Mars firing up your North Node - your nervous system is processing a LOT. This is not anxiety. This is your body registering real change. Magnesium before bed. Cold water on your wrists when the activation spikes. Long exhales - four counts in, eight counts out. Your Taurus Sun needs physical grounding: bare feet on grass, heavy blankets, warm showers. Do not try to think your way calm. Feel your way there.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>For your Taurus Sun</h4>
+      <p>Taurus needs to feel safe before it can move. This is not weakness - it is wisdom. Your body is your compass. When something feels right in your bones, trust it. When something makes your stomach clench, that is data too. Feed yourself well this week - real food, not rushed food. Beauty matters to you - arrange flowers, light a candle, wear something that makes you feel powerful. These are not luxuries. For a Taurus, they are survival tools. When you feel resourced, you can face anything.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>For the transition</h4>
+      <p>You are between identities right now. The solo practitioner who holds everything is being released. The strategic builder who creates something worth millions has not fully arrived yet. That liminal space is uncomfortable for everyone, but especially for a Taurus-Scorpio axis that craves certainty. Here is what your chart is telling you: the fear is not a stop sign. It is the doorbell. The next 12 months - Jupiter in your money house, Uranus rewriting your identity, Mars fuelling your career path - this is the window. Build it. Systematise it. Make it beautiful. Make it run without you. Then sell it and walk into your next chapter with a million reasons to feel safe. Your chart has never looked more supportive of exactly this than it does right now.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>For your projects</h4>
+      <p>Jupiter sextile Venus is the green light for building real, tangible value. Right now, the highest-value thing you can do is make Visa Advice run like a machine - clean systems, automated onboarding, documented processes, a client portal that works without you. Every piece of infrastructure you build in the next 12 months directly increases the exit price. And your other projects - Cru & Co, Prima Pearl, Coffee Book, Dirty Martini - they are still there, simmering, ready for after. Venus in Taurus does not rush. She builds things that last. Trust that timing.</p>
+    </div>
+  </div>
+
+  <!-- Aurora CTA -->
+  <div class="aurora-cta">
+    <h3>Want More of This?</h3>
+    <p>Aurora is your personal AI astrologer - built by Kelly, trained on sacred texts and real astrology. Ask her anything about your chart, your transits, your path. She already knows your birth data.</p>
+    <a href="https://aiwithsoulofficial.github.io/aurora-landing/" class="aurora-btn">Meet Aurora - $9/week</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Prepared with care by Kelly Wotherspoon<br>
+    <a href="https://aiwithsoul.com.au">AI with Soul</a></p>
+    <p style="margin-top: 12px;">Transit data calculated using Swiss Ephemeris (Tropical/Placidus)<br>
+    Birth data: May 3, 1973 - 6:50am AEST - Melbourne, Australia</p>
+  </div>
+
+</div>
+
+</body>
+</html>
