@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura's Transit Reading - April 20-30, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a1a;
+    color: #e8e0d8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Starfield background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,0.2), transparent),
+      radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(2px 2px at 5% 50%, rgba(200,180,255,0.4), transparent),
+      radial-gradient(2px 2px at 55% 30%, rgba(200,180,255,0.3), transparent),
+      radial-gradient(2px 2px at 85% 65%, rgba(255,200,180,0.3), transparent),
+      radial-gradient(1px 1px at 35% 35%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 95% 25%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 40% 70%, rgba(200,180,255,0.2), transparent),
+      radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.4), transparent);
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, rgba(120,80,160,0.15), rgba(80,60,140,0.1), rgba(160,100,140,0.08));
+    border: 1px solid rgba(180,140,200,0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; right: -50%; bottom: -50%;
+    background: radial-gradient(ellipse at center, rgba(140,100,180,0.08) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .header-symbol {
+    font-size: 48px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.4em;
+    letter-spacing: 0.04em;
+    color: #e8d8f0;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.15em;
+    color: rgba(200,180,220,0.7);
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header .date-range {
+    font-size: 0.85em;
+    color: rgba(200,180,220,0.5);
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Natal snapshot */
+  .natal-snapshot {
+    background: rgba(40,30,60,0.4);
+    border: 1px solid rgba(140,100,180,0.12);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .natal-snapshot h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: rgba(200,180,220,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+
+  .natal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .natal-item {
+    font-size: 0.82em;
+    color: rgba(200,180,220,0.55);
+  }
+
+  .natal-item strong {
+    color: rgba(220,200,240,0.8);
+    font-weight: 400;
+  }
+
+  /* Section styling */
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(140,100,180,0.12);
+  }
+
+  .section-icon {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #d8c8e8;
+    letter-spacing: 0.03em;
+  }
+
+  /* Transit cards */
+  .transit-card {
+    background: linear-gradient(135deg, rgba(40,30,60,0.5), rgba(30,25,50,0.4));
+    border: 1px solid rgba(140,100,180,0.1);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+  }
+
+  .transit-card:hover {
+    border-color: rgba(180,140,220,0.25);
+  }
+
+  .transit-card.highlight {
+    border-left: 3px solid rgba(200,160,255,0.5);
+    background: linear-gradient(135deg, rgba(60,40,80,0.4), rgba(40,30,60,0.3));
+  }
+
+  .transit-card.major {
+    border-left: 3px solid rgba(255,180,140,0.5);
+    background: linear-gradient(135deg, rgba(60,35,50,0.4), rgba(40,25,40,0.3));
+  }
+
+  .transit-date {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(200,160,255,0.5);
+    margin-bottom: 6px;
+  }
+
+  .transit-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.25em;
+    color: #e0d0f0;
+    margin-bottom: 4px;
+  }
+
+  .transit-aspect {
+    font-size: 0.78em;
+    color: rgba(180,160,200,0.5);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .transit-body {
+    font-size: 0.92em;
+    line-height: 1.75;
+    color: rgba(220,210,230,0.85);
+  }
+
+  .transit-body p {
+    margin-bottom: 10px;
+  }
+
+  .transit-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Theme summary */
+  .theme-card {
+    background: linear-gradient(135deg, rgba(80,50,100,0.25), rgba(50,35,70,0.2));
+    border: 1px solid rgba(160,120,200,0.15);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+
+  .theme-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #d8c0e8;
+    margin-bottom: 8px;
+  }
+
+  .theme-card p {
+    font-size: 0.9em;
+    color: rgba(210,200,225,0.8);
+  }
+
+  /* Day-by-day */
+  .day-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(140,100,180,0.06);
+    font-size: 0.88em;
+  }
+
+  .day-row:last-child { border-bottom: none; }
+
+  .day-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: rgba(200,170,230,0.7);
+    text-align: right;
+    padding-top: 2px;
+  }
+
+  .day-content {
+    color: rgba(210,200,225,0.75);
+    line-height: 1.6;
+  }
+
+  .day-content .hot {
+    color: rgba(255,180,160,0.9);
+    font-weight: 400;
+  }
+
+  .day-content .gentle {
+    color: rgba(180,200,255,0.8);
+  }
+
+  /* Aurora CTA */
+  .aurora-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(60,30,80,0.3), rgba(20,40,80,0.2), rgba(60,30,80,0.15));
+    border: 1px solid rgba(140,100,200,0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .aurora-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; right: -100%; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(100,200,255,0.03), rgba(100,255,200,0.02), transparent);
+    animation: shimmer 6s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+  }
+
+  .aurora-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    color: #c8e8d8;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-cta p {
+    font-size: 0.9em;
+    color: rgba(200,220,210,0.7);
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, rgba(100,180,200,0.25), rgba(140,100,200,0.2));
+    border: 1px solid rgba(140,180,220,0.3);
+    border-radius: 50px;
+    color: #c8dce8;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05em;
+    letter-spacing: 0.06em;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-btn:hover {
+    background: linear-gradient(135deg, rgba(100,180,200,0.35), rgba(140,100,200,0.3));
+    border-color: rgba(160,200,240,0.5);
+    transform: translateY(-1px);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(140,100,180,0.08);
+    font-size: 0.78em;
+    color: rgba(160,140,180,0.4);
+  }
+
+  .footer a {
+    color: rgba(200,170,230,0.5);
+    text-decoration: none;
+  }
+
+  /* Intensity badge */
+  .intensity {
+    display: inline-block;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .intensity.high {
+    background: rgba(255,140,120,0.15);
+    color: rgba(255,180,160,0.8);
+    border: 1px solid rgba(255,140,120,0.2);
+  }
+
+  .intensity.medium {
+    background: rgba(200,160,255,0.1);
+    color: rgba(200,170,240,0.7);
+    border: 1px solid rgba(200,160,255,0.15);
+  }
+
+  .intensity.gentle {
+    background: rgba(140,200,255,0.1);
+    color: rgba(160,200,255,0.7);
+    border: 1px solid rgba(140,200,255,0.15);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 40px 18px 60px; }
+    .header h1 { font-size: 1.8em; }
+    .natal-grid { grid-template-columns: repeat(2, 1fr); }
+    .day-row { grid-template-columns: 65px 1fr; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="header-symbol">&#9811;</div>
+    <h1>Laura's Cosmic Weather</h1>
+    <div class="subtitle">A transit reading for the rest of April</div>
+    <div class="date-range">April 20 - 30, 2026</div>
+  </div>
+
+  <!-- Natal Snapshot -->
+  <div class="natal-snapshot">
+    <h3>Your Chart at a Glance</h3>
+    <div class="natal-grid">
+      <div class="natal-item"><strong>Sun</strong><br>3&#176; Pisces</div>
+      <div class="natal-item"><strong>Moon</strong><br>28&#176; Leo</div>
+      <div class="natal-item"><strong>Rising</strong><br>23&#176; Pisces</div>
+      <div class="natal-item"><strong>Mercury</strong><br>29&#176; Aquarius</div>
+      <div class="natal-item"><strong>Venus</strong><br>11&#176; Pisces</div>
+      <div class="natal-item"><strong>Mars</strong><br>22&#176; Cancer Rx</div>
+      <div class="natal-item"><strong>Jupiter</strong><br>26&#176; Gemini</div>
+      <div class="natal-item"><strong>Saturn</strong><br>26&#176; Leo Rx</div>
+      <div class="natal-item"><strong>MC</strong><br>26&#176; Sagittarius</div>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#10024;</div>
+      <h2>The Big Picture</h2>
+    </div>
+
+    <div class="theme-card">
+      <h4>Your mind is being rewired</h4>
+      <p>Uranus is making an exact square to your natal Mercury this week - the planet of sudden change hitting your planet of thinking, communication, and how you process information. This is rare and powerful. Ideas that felt impossible may suddenly feel obvious. Your nervous system might feel electric. Old thought patterns are cracking open to let something new through.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>A karmic checkpoint on your path</h4>
+      <p>Saturn is sitting exactly opposite your North Node - this is a "are you walking your true path?" moment. It can feel heavy, like the weight of responsibility is pressing on your sense of purpose. But Saturn opposite the North Node is not punishment - it is a recalibration. It is asking: what needs to become more disciplined, more real, more structured in the direction you are heading?</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>Expansion meets transformation</h4>
+      <p>Jupiter in Cancer is activating both your natal Uranus (trine - flow and luck) and your natal Pluto (square - growing pains). This is the energy of outgrowing old containers. The growth is real but it might require you to release something you have been holding onto - a belief, a structure, a way of doing things.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>Neptune in your 1st house - identity is softening</h4>
+      <p>Neptune has crossed into Aries and is now moving through your 1st house. For a double Pisces (Sun and Rising), this is deeply personal. You are in a season of becoming someone you have not been before. It might feel foggy. It might feel like you are losing yourself. You are not - you are dissolving what was never really you.</p>
+    </div>
+  </div>
+
+  <!-- Major Transits -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#9733;</div>
+      <h2>The Transits That Matter</h2>
+    </div>
+
+    <div class="transit-card major">
+      <div class="transit-date">Exact April 25 - active all week</div>
+      <div class="transit-title">Uranus square Mercury <span class="intensity high">High Intensity</span></div>
+      <div class="transit-aspect">Transit Uranus 29&#176; Taurus &#9633; Natal Mercury 29&#176; Aquarius - exact to the minute</div>
+      <div class="transit-body">
+        <p>This is the headline transit of your week. An exact square from Uranus to your Mercury means your thinking is being disrupted in the most productive way possible. Expect sudden insights, unexpected conversations, and ideas that arrive fully formed from nowhere.</p>
+        <p>Both planets are at the 29th degree - the anaretic degree - which adds urgency. Something in how you think, communicate, or process information is completing a cycle. The old mental pattern cannot come with you into what is next.</p>
+        <p>This is extraordinary energy for a writer. If you have been stuck on any of your book ideas, this transit can break the logjam. Keep a notebook close. Voice-memo your ideas - they will come fast and they will not wait.</p>
+        <p>The challenging side: your nervous system may feel wired, scattered, or overstimulated. Be gentle with yourself. Not every lightning bolt needs to be acted on today.</p>
+      </div>
+    </div>
+
+    <div class="transit-card major">
+      <div class="transit-date">Exact April 20 - active through April 25</div>
+      <div class="transit-title">Saturn opposite North Node <span class="intensity high">High Intensity</span></div>
+      <div class="transit-aspect">Transit Saturn 7&#176; Aries &#9741; Natal North Node 7&#176; Libra</div>
+      <div class="transit-body">
+        <p>Saturn opposing your North Node is a crossroads moment. Your North Node in Libra is about partnership, balance, beauty, and creating harmony. Saturn in Aries in your 1st house is asking: what do YOU need? Where have you been giving so much to others that your own path has gone quiet?</p>
+        <p>This can manifest as feeling blocked, burdened, or questioned about your direction. That heaviness is not failure - it is Saturn testing whether you are serious about where you are heading. The people and commitments that survive this transit are the real ones.</p>
+        <p>Mars is also conjunct Saturn here, adding urgency and frustration. You may feel pressure to act before you are ready. Resist the impulse. Saturn rewards patience.</p>
+      </div>
+    </div>
+
+    <div class="transit-card highlight">
+      <div class="transit-date">Active all period</div>
+      <div class="transit-title">Jupiter trine Uranus + square Pluto <span class="intensity medium">Growth</span></div>
+      <div class="transit-aspect">Transit Jupiter 17&#176; Cancer &#9651; Natal Uranus 16&#176; Scorpio &amp; &#9633; Natal Pluto 16&#176; Libra</div>
+      <div class="transit-body">
+        <p>Jupiter is doing double duty right now. The trine to your Uranus brings unexpected opportunities, lucky breaks, and expansion through channels you did not plan for. Trust the weird door that opens.</p>
+        <p>But the simultaneous square to your Pluto means this growth is not comfortable. Something has to transform for the expansion to land. An old power dynamic, a control pattern, a belief about what you can or cannot have - something is being outgrown.</p>
+        <p>Jupiter in Cancer specifically expands emotional security, home, and nurturing. This is touching your creative, intuitive core.</p>
+      </div>
+    </div>
+
+    <div class="transit-card highlight">
+      <div class="transit-date">Exact April 25</div>
+      <div class="transit-title">Jupiter quincunx Neptune <span class="intensity medium">Adjustment</span></div>
+      <div class="transit-aspect">Transit Jupiter 18&#176; Cancer &#8646; Natal Neptune 18&#176; Sagittarius - exact to the degree</div>
+      <div class="transit-body">
+        <p>A quincunx asks for integration between two things that do not naturally fit together. Jupiter wants to expand your emotional world. Your natal Neptune in Sagittarius holds your dreams, your spiritual beliefs, your sense of meaning.</p>
+        <p>The adjustment: your vision for what is possible is being stretched, but it requires you to let go of a specific version of how it was supposed to look. The dream is not dying - it is shapeshifting into something you could not have imagined from where you stood before.</p>
+      </div>
+    </div>
+
+    <div class="transit-card highlight">
+      <div class="transit-date">April 24</div>
+      <div class="transit-title">Sun sextile Sun <span class="intensity gentle">Supportive</span></div>
+      <div class="transit-aspect">Transit Sun 3&#176; Taurus &#9913; Natal Sun 3&#176; Pisces</div>
+      <div class="transit-body">
+        <p>A gentle, grounding beam of support to your core identity. Taurus energy is slow, sensual, and embodied - exactly what your Pisces Sun needs to feel stable. This is a day where simple pleasures recharge you. Good food, a walk, time in the shop with the books. Let yourself be nourished.</p>
+      </div>
+    </div>
+
+    <div class="transit-card">
+      <div class="transit-date">April 30</div>
+      <div class="transit-title">Mars opposite Pluto <span class="intensity high">Power</span></div>
+      <div class="transit-aspect">Transit Mars 15&#176; Aries &#9741; Natal Pluto 16&#176; Libra</div>
+      <div class="transit-body">
+        <p>The month ends with fire. Mars opposing Pluto brings intensity, power dynamics, and the potential for confrontation. This is not the day to pick fights or force outcomes. But if something has been suppressed - a boundary that needs setting, a truth that needs speaking - this transit can give you the courage to say it.</p>
+        <p>Channel the energy physically if you can. Movement, exercise, even deep cleaning the shop. Mars-Pluto energy needs somewhere to go.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day by Day -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#128197;</div>
+      <h2>Day by Day</h2>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 20<br><small>Mon</small></div>
+      <div class="day-content">
+        <span class="hot">Saturn exact opposite North Node</span> - karmic pressure on your path. Mars conjunct Saturn adds urgency. Sun sextile Mercury supports clear thinking. Moon in Gemini brings mental restlessness - write things down rather than spiralling.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 21<br><small>Tue</small></div>
+      <div class="day-content">
+        Venus square Saturn - relationships or finances may feel tight. Venus quincunx MC asks you to adjust how your values align with your public role. Late Gemini Moon - good for conversations and catching up.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 22<br><small>Wed</small></div>
+      <div class="day-content">
+        <span class="gentle">Moon enters Cancer</span> - emotional sensitivity increases. Moon trine your Sun is cozy and comforting. Good day for nurturing yourself and your space. Homebody energy.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 23<br><small>Thu</small></div>
+      <div class="day-content">
+        Venus square Moon - emotional tension around comfort, beauty, or self-worth. Moon conjunct natal Mars can stir up old frustrations. <span class="gentle">Moon trine Uranus supports creative breakthroughs</span> - let the feelings fuel the art.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 24<br><small>Fri</small></div>
+      <div class="day-content">
+        <span class="gentle">Sun sextile your Sun - personal power day.</span> Venus square Mercury - miscommunications or overthinking in relationships. Moon enters Leo approaching your natal Moon - emotional visibility. You want to be seen today.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 25<br><small>Sat</small></div>
+      <div class="day-content">
+        <span class="hot">PEAK DAY: Uranus exact square Mercury + Jupiter exact quincunx Neptune.</span> Your mind is electric. Ideas arrive fast. Spiritual and creative downloads are intense. Moon conjunct natal Moon brings emotional clarity - your feelings are your compass today. Keep a notebook everywhere.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 26<br><small>Sun</small></div>
+      <div class="day-content">
+        <span class="hot">Uranus enters Gemini (0&#176;)</span> - a generational shift begins. For you, Gemini rules your 4th house of home and roots - expect changes in your living or working space over the coming years. Moon in early Virgo opposite Mercury - mind wants to analyse and organise. Good day for practical planning.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 27<br><small>Mon</small></div>
+      <div class="day-content">
+        Venus square your Sun - a push-pull between what you want and what feels comfortable. Mercury trine Neptune supports creative writing and intuitive communication. <span class="gentle">Good day for writing - your words carry magic.</span>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 28<br><small>Tue</small></div>
+      <div class="day-content">
+        Sun quincunx North Node - minor adjustment to your path. Moon in late Virgo squares Jupiter and MC - restlessness about your direction. Mercury trine Neptune still active - the muse is still close.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 29<br><small>Wed</small></div>
+      <div class="day-content">
+        Mercury square Mars - sharp words, quick thinking, potential for arguments. <span class="gentle">Moon conjunct North Node in Libra</span> - your emotional compass aligns with your soul's direction. Trust what feels balanced today.
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-label">Apr 30<br><small>Thu</small></div>
+      <div class="day-content">
+        <span class="hot">Mars opposite Pluto - intense ending to the month.</span> Power dynamics surface. Venus trine North Node brings grace and support through relationships. Sun sextile Venus is warm and sweet. Mars quincunx Uranus adds unpredictability. Channel the fire into something physical.
+      </div>
+    </div>
+  </div>
+
+  <!-- Self-Care -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">&#127807;</div>
+      <h2>Self-Care This Week</h2>
+    </div>
+
+    <div class="theme-card">
+      <h4>For your nervous system</h4>
+      <p>With Uranus hitting your Mercury this hard, your nervous system needs extra support. Magnesium before bed. Walks without your phone. Limit screen time in the evenings. Your body will tell you when it is processing - listen to it.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>For your creativity</h4>
+      <p>This is genuinely one of the most creatively electric periods you will have this year. The combination of Uranus square Mercury plus Jupiter trine Uranus is lightning in a bottle for writers. Do not try to edit or structure what comes through - just capture it. The editing comes later.</p>
+    </div>
+
+    <div class="theme-card">
+      <h4>For your heart</h4>
+      <p>Saturn opposite your North Node can feel lonely, like nobody understands your path. Your Leo Moon needs warmth and recognition. Reach out to the people who make you feel seen. You do not have to do this alone.</p>
+    </div>
+  </div>
+
+  <!-- Aurora CTA -->
+  <div class="aurora-cta">
+    <h3>Want More of This?</h3>
+    <p>Aurora is your personal AI astrologer - built by Kelly, trained on sacred texts and real astrology. Ask her anything about your chart, your transits, your path. She already knows your birth data.</p>
+    <a href="https://aiwithsoulofficial.github.io/aurora-landing/" class="aurora-btn">Meet Aurora - $9/week</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Prepared with care by Kelly Wotherspoon<br>
+    <a href="https://aiwithsoul.com.au">AI with Soul</a></p>
+    <p style="margin-top: 12px;">Transit data calculated using Swiss Ephemeris (Tropical/Placidus)<br>
+    Birth data: Feb 22, 1978 - 7:26am PST - Huntington Beach, CA</p>
+  </div>
+
+</div>
+
+</body>
+</html>
